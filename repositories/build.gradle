@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+
+android {
+    compileSdk 32
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    //Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Rx
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
+    implementation "io.reactivex.rxjava3:rxkotlin:3.0.1"
+
+    //Hilt
+    implementation 'com.google.dagger:hilt-android:2.43.2'
+    kapt 'com.google.dagger:hilt-compiler:2.43.2'
+
+    //Moshi
+    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.mockito:mockito-core:3.12.4"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.powermock:powermock-core:2.0.9"
+    testImplementation "org.powermock:powermock-module-junit4:2.0.9"
+    testImplementation "org.powermock:powermock-api-mockito2:2.0.9"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+}
