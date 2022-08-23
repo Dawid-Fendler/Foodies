@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.rxjava3.android.plugins.RxAndroidPlugins
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -35,20 +34,20 @@ class GetRecipeUseCaseTest {
     @Test
     fun `return error result when get recipes returns error`() {
         val throwable = Throwable()
-        whenever(repository.getRecipes(1)).thenReturn(Observable.error(throwable))
+        whenever(repository.getRecipes()).thenReturn(Observable.error(throwable))
 
         useCase
-            .invoke(1)
+            .run()
             .test()
             .assertValue(Failure(throwable))
     }
 
     @Test
     fun `return success result when get recipes returns recipes`() {
-        whenever(repository.getRecipes(1)).thenReturn(Observable.just(recipe))
+        whenever(repository.getRecipes()).thenReturn(Observable.just(recipe))
 
         useCase
-            .invoke(1)
+            .run()
             .test()
             .assertValue(Success(recipe))
     }

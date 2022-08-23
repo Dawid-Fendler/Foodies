@@ -10,7 +10,7 @@ class RecipeRemoteDataSource @Inject constructor(
     private val recipeApi: RecipeApi
 ) : RecipeDataSource {
 
-    override fun getRecipes(recipeLimit: Int): Observable<Recipe> {
-        return recipeApi.getRecipes(recipeLimit).map { it.toDomain() }
+    override fun getRecipes(): Observable<Recipe> {
+        return recipeApi.getRecipes().map { it.toDomain() }
     }
 }

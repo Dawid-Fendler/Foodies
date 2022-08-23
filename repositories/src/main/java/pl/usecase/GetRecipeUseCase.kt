@@ -11,18 +11,24 @@ class GetRecipeUseCase @Inject constructor(
     private val repository: RecipeRepository,
 ) {
 
-    operator fun invoke(recipeLimit: Int): Observable<Result> {
+    fun run(): Observable<Result> {
         return repository
-            .getRecipes(recipeLimit)
-            .map { Result.Success(it) as Result }
+            .getRecipes()
+            .map { recipe ->
+                if (recipe.recipeList.isEmpty()) {
+                    Result.EmptyList("Couldn't find any recipes")
+                }else {
+                    Result.Success(recipe) as Result
+                }
+            }
             .onErrorReturn { Result.Failure(it) as Result }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
     }
 
     sealed class Result {
-
         data class Success(val data: Recipe) : Result()
+        data class EmptyList(val errorMessage: String): Result()
         data class Failure(val throwable: Throwable) : Result()
     }
 }

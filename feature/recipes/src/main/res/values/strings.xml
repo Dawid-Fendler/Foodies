@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recipes_data_loading_error">Could not loading recipes, please swipe to refresh.</string>
+</resources>

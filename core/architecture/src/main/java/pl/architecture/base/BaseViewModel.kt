@@ -1,4 +1,4 @@
-package pl.architecture
+package pl.architecture.base
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.disposables.CompositeDisposable

@@ -9,7 +9,7 @@ class RecipeRepositoryImpl @Inject constructor(
     private val recipeDataSource: RecipeDataSource
 ) : RecipeRepository {
 
-    override fun getRecipes(recipeLimit: Int) =
+    override fun getRecipes() =
         recipeDataSource
-            .getRecipes(recipeLimit)
+            .getRecipes()
 }

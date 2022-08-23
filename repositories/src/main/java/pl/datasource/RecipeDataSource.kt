@@ -6,5 +6,5 @@ import pl.model.RecipeResult
 
 interface RecipeDataSource {
 
-    fun getRecipes(recipeLimit: Int): Observable<Recipe>
+    fun getRecipes(): Observable<Recipe>
 }

@@ -14,10 +14,10 @@ class RecipeRepositoryTest {
 
     @Test
     fun `return recipes when get recipes is called`() {
-        whenever(dataSource.getRecipes(1)).thenReturn(Observable.just(recipe))
+        whenever(dataSource.getRecipes()).thenReturn(Observable.just(recipe))
 
         repository
-            .getRecipes(1)
+            .getRecipes()
             .test()
             .assertValue(recipe)
     }

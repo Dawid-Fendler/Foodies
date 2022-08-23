@@ -10,7 +10,7 @@ interface RecipeApi {
 
     @GET("/recipes/complexSearch")
     fun getRecipes(
-        @Query("number") recipeLimit: Int,
+        @Query("number") recipeLimit: Int = 20,
         @Query("apiKey") key: String = API_KEY
     ): Observable<RecipeResponse>
 }

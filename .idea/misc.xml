@@ -5,7 +5,12 @@
       <map>
         <entry key="..\:/Android/Project/Foodies/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
         <entry key="..\:/Android/Project/Foodies/app/src/main/res/layout/toolbar_view.xml" value="0.358695652173913" />
-        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/layout/recipe_list_fragment.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Project/Foodies/design/src/main/res/layout/error_view.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/drawable/ic_error_placeholder.xml" value="0.2965" />
+        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/drawable/ic_error_placholder.xml" value="0.2965" />
+        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/layout-v11/recipe_list_fragment.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/layout/recipe_list_fragment.xml" value="0.2222222222222222" />
+        <entry key="..\:/Android/Project/Foodies/feature/recipes/src/main/res/layout/recipe_list_row_view.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -14,5 +19,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.358695652173913" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -39,6 +39,7 @@ dependencies {
     implementation(project(':core:architecture'))
     implementation(project(':repositories'))
     implementation(project(':feature:recipes'))
+    implementation(project(':design'))
 
     //AndroidX
     implementation 'androidx.core:core-ktx:1.8.0'

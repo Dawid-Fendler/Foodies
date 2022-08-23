@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Recipe List Row View -->
+    <dimen name="recipe_card_view_corner_radius">10dp</dimen>
+    <dimen name="recipe_card_view_stroke_width">2dp</dimen>
+    <dimen name="recipe_card_view_image_size">200dp</dimen>
+    <dimen name="recipe_card_view_title_text_size">20sp</dimen>
+
+    <dimen name="recipe_lottie_progress_bar_size">80dp</dimen>
+</resources>

@@ -1,4 +1,4 @@
-package pl.architecture
+package pl.architecture.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflate<VB>) : Fragment() {
 
     private var _binding: VB? = null
-    val binding = _binding!!
+    val binding get()= _binding!!
 
     protected val compositeDisposable = CompositeDisposable()
 
