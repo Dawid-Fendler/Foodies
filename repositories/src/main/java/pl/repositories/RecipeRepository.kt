@@ -1,7 +1,7 @@
 package pl.repositories
 
 import io.reactivex.rxjava3.core.Observable
-import pl.model.Recipe
+import pl.model.recipes.Recipe
 
 interface RecipeRepository {
 

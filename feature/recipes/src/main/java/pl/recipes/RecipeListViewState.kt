@@ -1,6 +1,6 @@
 package pl.recipes
 
-import pl.uimodel.RecipeUiModel
+import pl.uimodel.recipes.RecipeUiModel
 
 sealed class RecipeListViewState {
     data class RecipesListLoaded(val result: RecipeUiModel) : RecipeListViewState()

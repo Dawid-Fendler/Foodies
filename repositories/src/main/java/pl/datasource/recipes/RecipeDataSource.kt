@@ -1,8 +1,7 @@
-package pl.datasource
+package pl.datasource.recipes
 
 import io.reactivex.rxjava3.core.Observable
-import pl.model.Recipe
-import pl.model.RecipeResult
+import pl.model.recipes.Recipe
 
 interface RecipeDataSource {
 

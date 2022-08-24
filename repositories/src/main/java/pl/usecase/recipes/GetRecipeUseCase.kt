@@ -1,9 +1,9 @@
-package pl.usecase
+package pl.usecase.recipes
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import pl.model.Recipe
+import pl.model.recipes.Recipe
 import pl.repositories.RecipeRepository
 import javax.inject.Inject
 

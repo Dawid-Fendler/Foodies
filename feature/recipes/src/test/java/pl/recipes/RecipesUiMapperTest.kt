@@ -2,7 +2,7 @@ package pl.recipes
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import pl.uimodel.RecipeUiModel
+import pl.uimodel.recipes.RecipeUiModel
 
 class RecipesUiMapperTest {
 

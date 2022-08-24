@@ -10,11 +10,11 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import pl.model.recipes.Recipe
 import pl.repositories.RecipeRepository
 import pl.repositories.model.recipe
-import pl.usecase.GetRecipeUseCase.Result.Failure
-import pl.usecase.GetRecipeUseCase.Result.Success
-import pl.usecase.GetRecipeUseCase
+import pl.usecase.recipes.GetRecipeUseCase
+import pl.usecase.recipes.GetRecipeUseCase.Result.*
 
 
 class GetRecipeUseCaseTest {
@@ -27,12 +27,12 @@ class GetRecipeUseCaseTest {
 
     @Before
     fun setup() {
-        RxAndroidPlugins.setInitMainThreadSchedulerHandler{ Schedulers.trampoline() }
-        RxJavaPlugins.setIoSchedulerHandler{ Schedulers.trampoline() }
+        RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
+        RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
     }
 
     @Test
-    fun `return error result when get recipes returns error`() {
+    fun `return error when get recipes returns failure`() {
         val throwable = Throwable()
         whenever(repository.getRecipes()).thenReturn(Observable.error(throwable))
 
@@ -43,7 +43,17 @@ class GetRecipeUseCaseTest {
     }
 
     @Test
-    fun `return success result when get recipes returns recipes`() {
+    fun `return error message when get recipes returns empty list`() {
+        whenever(repository.getRecipes()).thenReturn(Observable.just(Recipe(listOf())))
+
+        useCase
+            .run()
+            .test()
+            .assertValue(EmptyList("Couldn't find any recipes"))
+    }
+
+    @Test
+    fun `return recipes when get recipes returns recipes`() {
         whenever(repository.getRecipes()).thenReturn(Observable.just(recipe))
 
         useCase

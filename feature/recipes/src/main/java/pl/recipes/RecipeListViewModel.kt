@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import pl.architecture.SingleLiveEvent
 import pl.architecture.base.BaseViewModel
-import pl.usecase.GetRecipeUseCase
-import pl.usecase.GetRecipeUseCase.Result.*
+import pl.usecase.recipes.GetRecipeUseCase
+import pl.usecase.recipes.GetRecipeUseCase.Result.*
 import javax.inject.Inject
 
 @HiltViewModel

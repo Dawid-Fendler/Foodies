@@ -3,10 +3,10 @@ package pl.repositories.mapper
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import pl.mapper.toDomain
-import pl.model.Recipe
+import pl.model.recipes.Recipe
 import pl.repositories.model.recipeResult
 import pl.repositories.model.recipeResultResponse
-import pl.restmodel.RecipeResponse
+import pl.restmodel.recipes.RecipeResponse
 
 class RecipeMapperTest {
 

@@ -1,13 +1,13 @@
-package pl.datasource
+package pl.datasource.recipes
 
 import io.reactivex.rxjava3.core.Observable
-import pl.api.RecipeApi
+import pl.api.RecipesApi
 import pl.mapper.toDomain
-import pl.model.Recipe
+import pl.model.recipes.Recipe
 import javax.inject.Inject
 
 class RecipeRemoteDataSource @Inject constructor(
-    private val recipeApi: RecipeApi
+    private val recipeApi: RecipesApi
 ) : RecipeDataSource {
 
     override fun getRecipes(): Observable<Recipe> {

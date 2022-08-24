@@ -1,9 +1,9 @@
 package pl.repositories.model
 
-import pl.model.Recipe
-import pl.model.RecipeResult
-import pl.restmodel.RecipeResponse
-import pl.restmodel.RecipeResultResponse
+import pl.model.recipes.Recipe
+import pl.model.recipes.RecipeResult
+import pl.restmodel.recipes.RecipeResponse
+import pl.restmodel.recipes.RecipeResultResponse
 
 val recipeResultResponse = RecipeResultResponse(
     id = 1,

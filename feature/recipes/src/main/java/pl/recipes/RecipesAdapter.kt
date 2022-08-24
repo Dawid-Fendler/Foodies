@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.rxjava3.subjects.PublishSubject
-import pl.uimodel.RecipeResultUiModel
-import pl.uimodel.RecipeUiModel
+import pl.uimodel.recipes.RecipeResultUiModel
+import pl.uimodel.recipes.RecipeUiModel
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesViewHolder>() {
 

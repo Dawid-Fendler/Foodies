@@ -1,4 +1,4 @@
-package pl.model
+package pl.model.recipes
 
 data class RecipeResult(
     val recipeId: Int,

@@ -10,10 +10,10 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import pl.usecase.GetRecipeUseCase
-import pl.usecase.GetRecipeUseCase.Result.Success
-import pl.usecase.GetRecipeUseCase.Result.EmptyList
-import pl.usecase.GetRecipeUseCase.Result.Failure
+import pl.usecase.recipes.GetRecipeUseCase
+import pl.usecase.recipes.GetRecipeUseCase.Result.Success
+import pl.usecase.recipes.GetRecipeUseCase.Result.EmptyList
+import pl.usecase.recipes.GetRecipeUseCase.Result.Failure
 
 
 class RecipeListViewModelTest {

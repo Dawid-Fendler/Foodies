@@ -2,11 +2,11 @@ package pl.api
 
 import io.reactivex.rxjava3.core.Observable
 import pl.Constants.API_KEY
-import pl.restmodel.RecipeResponse
+import pl.restmodel.recipes.RecipeResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RecipeApi {
+interface RecipesApi {
 
     @GET("/recipes/complexSearch")
     fun getRecipes(

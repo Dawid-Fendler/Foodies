@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import io.reactivex.rxjava3.subjects.PublishSubject
 import pl.recipes.databinding.RecipeListRowViewBinding
-import pl.uimodel.RecipeResultUiModel
+import pl.uimodel.recipes.RecipeResultUiModel
 
 class RecipesViewHolder(
     private val binding: RecipeListRowViewBinding

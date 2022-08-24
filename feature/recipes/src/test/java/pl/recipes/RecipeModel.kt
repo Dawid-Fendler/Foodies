@@ -1,9 +1,9 @@
 package pl.recipes
 
-import pl.model.Recipe
-import pl.model.RecipeResult
-import pl.uimodel.RecipeResultUiModel
-import pl.uimodel.RecipeUiModel
+import pl.model.recipes.Recipe
+import pl.model.recipes.RecipeResult
+import pl.uimodel.recipes.RecipeResultUiModel
+import pl.uimodel.recipes.RecipeUiModel
 
 val recipeResult = RecipeResult(
     recipeId = 1,

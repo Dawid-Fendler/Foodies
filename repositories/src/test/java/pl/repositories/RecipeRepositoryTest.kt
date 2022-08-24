@@ -4,7 +4,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.rxjava3.core.Observable
 import org.junit.Test
-import pl.datasource.RecipeDataSource
+import pl.datasource.recipes.RecipeDataSource
 import pl.repositories.model.recipe
 
 class RecipeRepositoryTest {

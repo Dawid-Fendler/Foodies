@@ -1,4 +1,4 @@
-package pl.uimodel
+package pl.uimodel.recipes
 
 data class RecipeResultUiModel(
     val recipeId: Int,

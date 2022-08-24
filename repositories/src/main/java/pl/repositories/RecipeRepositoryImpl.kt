@@ -1,6 +1,6 @@
 package pl.repositories
 
-import pl.datasource.RecipeDataSource
+import pl.datasource.recipes.RecipeDataSource
 import pl.di.DataSourceModule
 import javax.inject.Inject
 
