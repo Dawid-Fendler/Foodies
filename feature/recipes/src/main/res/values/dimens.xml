@@ -6,5 +6,11 @@
     <dimen name="recipe_card_view_image_size">200dp</dimen>
     <dimen name="recipe_card_view_title_text_size">20sp</dimen>
 
+    <!-- Recipe List Fragment -->
     <dimen name="recipe_lottie_progress_bar_size">80dp</dimen>
+
+    <!-- Recipe Details Fragment -->
+    <dimen name="recipe_details_image_height">250dp</dimen>
+    <dimen name="icon_mark_size">24dp</dimen>
+    <dimen name="progress_bar_animation_size">80dp</dimen>
 </resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="recipes_data_loading_error">Could not loading recipes, please swipe to refresh.</string>
+    <string name="dishes_type">Dishes Type</string>
+    <string name="diet_type">Diet Type</string>
+    <string name="recipe_details_data_loading_error">Could not loading recipe details</string>
+    <string name="ingredients_button">Ingredients</string>
+    <string name="wines_button">Wines</string>
 </resources>

@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
 import pl.recipes.databinding.RecipeListFragmentBinding
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class RecipeListFragment :
@@ -25,7 +27,9 @@ class RecipeListFragment :
         initSwipeRefreshLayout()
         observeProgressLoadingEvent()
         observeRecipeListViewState()
+        navigateToRecipeDetails()
         viewModel.init()
+
     }
 
     private fun initRecyclerView() {
@@ -67,6 +71,16 @@ class RecipeListFragment :
                         ).show()
                     }
                 }
+            }
+    }
+
+    private fun navigateToRecipeDetails() {
+        mAdapter.getImageClickSubject()
+            .throttleFirst(500L, TimeUnit.MILLISECONDS)
+            .subscribe {
+                findNavController().navigate(
+                    RecipeListFragmentDirections.actionRecipeListFragmentToRecipeDetailsFragment(it)
+                )
             }
     }
 }

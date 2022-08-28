@@ -22,7 +22,7 @@ class RecipesViewHolder(
     private fun loadImageFromUrl(imageUrl: String) {
         binding.image.load(imageUrl) {
             crossfade(600)
-            error(R.drawable.ic_error_placeholder)
+            error(pl.design.R.drawable.ic_error_placeholder)
         }
     }
 
@@ -30,7 +30,7 @@ class RecipesViewHolder(
         result: RecipeResultUiModel,
         imageClickSubject: PublishSubject<Int>
     ) {
-        binding.image.setOnClickListener {
+        binding.root.setOnClickListener {
             imageClickSubject
                 .onNext(result.recipeId)
         }
