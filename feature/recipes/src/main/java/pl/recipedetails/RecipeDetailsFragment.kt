@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isNotEmpty
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.google.android.material.snackbar.Snackbar
@@ -14,6 +15,7 @@ import pl.extensions.parseHtml
 import pl.recipes.R
 import pl.recipes.databinding.RecipeDetailsFragmentBinding
 import pl.uimodel.recipedetails.RecipeDetailsUiModel
+import pl.uimodel.recipedetails.WinePairingUiModel
 
 @AndroidEntryPoint
 class RecipeDetailsFragment :
@@ -63,6 +65,7 @@ class RecipeDetailsFragment :
         initSummary(result.summary)
         initLikesValue(result.likes)
         initMinutesValue(result.minutes)
+        initOpenWinesScreenButton(result.winePairing)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -114,5 +117,18 @@ class RecipeDetailsFragment :
 
     private fun initMinutesValue(minutes: Int) {
         binding.timeValue.text = minutes.toString()
+    }
+
+    private fun initOpenWinesScreenButton(winePairing: WinePairingUiModel) {
+        if (winePairing.wines.isEmpty()) {
+            return
+        }
+        binding.openWinesScreenButton.setOnClickListener {
+            findNavController().navigate(
+                RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToWinesFragmentDialog(
+                    winePairing
+                )
+            )
+        }
     }
 }

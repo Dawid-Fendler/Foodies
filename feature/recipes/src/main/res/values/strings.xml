@@ -6,4 +6,5 @@
     <string name="recipe_details_data_loading_error">Could not loading recipe details</string>
     <string name="ingredients_button">Ingredients</string>
     <string name="wines_button">Wines</string>
+    <string name="wines">Wines</string>
 </resources>
