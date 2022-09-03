@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.rxjava3.kotlin.plusAssign
 import pl.architecture.base.BaseFragment
 import pl.recipes.databinding.RecipeListFragmentBinding
 import java.util.concurrent.TimeUnit
@@ -75,7 +76,7 @@ class RecipeListFragment :
     }
 
     private fun navigateToRecipeDetails() {
-        mAdapter.getImageClickSubject()
+        compositeDisposable += mAdapter.getImageClickSubject()
             .throttleFirst(500L, TimeUnit.MILLISECONDS)
             .subscribe {
                 findNavController().navigate(

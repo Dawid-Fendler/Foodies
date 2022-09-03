@@ -5,5 +5,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class WinePairing(
-    val wines: List<String>
+    val wines: List<String>?
 ): Parcelable

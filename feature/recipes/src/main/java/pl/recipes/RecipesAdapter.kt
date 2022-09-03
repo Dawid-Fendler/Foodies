@@ -1,5 +1,6 @@
 package pl.recipes
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesViewHolder>() {
     override fun getItemCount() = recipes.size
 
     fun setData(newData: RecipeUiModel) {
+        Log.d("Testowo", "setData:$newData")
         val recipesDiffUtil = RecipeDiffUtil(recipes, newData.recipeList)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.recipeList

@@ -17,7 +17,7 @@ fun RecipeDetails.toUiModel() = RecipeDetailsUiModel(
 )
 
 fun WinePairing.toUiModel() = WinePairingUiModel(
-    wines = wines
+    wines = wines.orEmpty()
 )
 
 fun createDietTypesList(
