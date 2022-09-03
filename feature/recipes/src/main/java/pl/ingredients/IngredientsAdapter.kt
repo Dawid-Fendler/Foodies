@@ -1,50 +1,46 @@
-package pl.recipes
+package pl.ingredients
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.rxjava3.subjects.PublishSubject
-import pl.uimodel.recipes.RecipeResultUiModel
-import pl.uimodel.recipes.RecipeUiModel
+import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 
-class RecipesAdapter : RecyclerView.Adapter<RecipesViewHolder>() {
+class IngredientsAdapter : RecyclerView.Adapter<IngredientsViewHolder>() {
 
-    private var recipes = emptyList<RecipeResultUiModel>()
+    private var ingredients = emptyList<ExtendedIngredientUiModel>()
 
     private val imageClickSubject: PublishSubject<Int> = PublishSubject.create()
     fun getImageClickSubject() = imageClickSubject
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
-        return RecipesViewHolder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientsViewHolder {
+        return IngredientsViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: RecipesViewHolder, position: Int) {
-        val currentRecipes = recipes[position]
-        holder.bind(currentRecipes, imageClickSubject)
+    override fun onBindViewHolder(holder: IngredientsViewHolder, position: Int) {
+        val currentIngredient = ingredients[position]
+        holder.bind(currentIngredient, imageClickSubject)
     }
 
-    override fun getItemCount() = recipes.size
+    override fun getItemCount() = ingredients.size
 
-    fun setData(newData: RecipeUiModel) {
-        val recipesDiffUtil = RecipeDiffUtil(recipes, newData.recipeList)
+    fun setData(newData: List<ExtendedIngredientUiModel>) {
+        val recipesDiffUtil = IngredientDiffUtil(ingredients, newData)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-        recipes = newData.recipeList
+        ingredients = newData
         diffUtilResult.dispatchUpdatesTo(this)
     }
 
-    class RecipeDiffUtil<T>(
+    class IngredientDiffUtil<T>(
         private val oldList: List<T>,
         private val newList: List<T>
     ) : DiffUtil.Callback() {
         override fun getOldListSize() = oldList.size
 
-
         override fun getNewListSize() = newList.size
-
 
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
             oldList[oldItemPosition] === newList[newItemPosition]
-
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
             oldList[oldItemPosition] == newList[newItemPosition]

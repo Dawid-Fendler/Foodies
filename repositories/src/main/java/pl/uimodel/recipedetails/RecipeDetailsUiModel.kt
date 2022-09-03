@@ -8,5 +8,6 @@ data class RecipeDetailsUiModel(
     val summary: String,
     val winePairing: WinePairingUiModel,
     val dishTypes: List<String>,
-    val dietTypes: List<String>
+    val dietTypes: List<String>,
+    val ingredients: List<ExtendedIngredientUiModel>
 )

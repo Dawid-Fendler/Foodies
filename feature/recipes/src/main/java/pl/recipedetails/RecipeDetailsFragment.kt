@@ -14,6 +14,7 @@ import pl.architecture.base.BaseFragment
 import pl.extensions.parseHtml
 import pl.recipes.R
 import pl.recipes.databinding.RecipeDetailsFragmentBinding
+import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 import pl.uimodel.recipedetails.RecipeDetailsUiModel
 import pl.uimodel.recipedetails.WinePairingUiModel
 
@@ -66,6 +67,7 @@ class RecipeDetailsFragment :
         initLikesValue(result.likes)
         initMinutesValue(result.minutes)
         initOpenWinesScreenButton(result.winePairing)
+        initOpenIngredientsScreenButton(result.ingredients)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -127,6 +129,19 @@ class RecipeDetailsFragment :
             findNavController().navigate(
                 RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToWinesFragmentDialog(
                     winePairing
+                )
+            )
+        }
+    }
+
+    private fun initOpenIngredientsScreenButton(ingredients: List<ExtendedIngredientUiModel>) {
+        if (ingredients.isEmpty()) {
+            return
+        }
+        binding.openIngredientsScreenButton.setOnClickListener {
+            findNavController().navigate(
+                RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToIngredientsListFragment(
+                    ingredients.toTypedArray()
                 )
             )
         }

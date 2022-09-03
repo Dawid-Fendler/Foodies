@@ -13,4 +13,8 @@
     <dimen name="recipe_details_image_height">250dp</dimen>
     <dimen name="icon_mark_size">24dp</dimen>
     <dimen name="progress_bar_animation_size">80dp</dimen>
+
+    <!-- Ingredients List Row View -->
+    <dimen name="image_view_border_size">120dp</dimen>
+    <dimen name="ingredients_image_view_size">100dp</dimen>
 </resources>

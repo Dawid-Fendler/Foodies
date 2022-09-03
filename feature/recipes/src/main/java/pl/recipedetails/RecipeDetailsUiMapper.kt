@@ -1,7 +1,9 @@
 package pl.recipedetails
 
+import pl.model.recipedetails.ExtendedIngredient
 import pl.model.recipedetails.RecipeDetails
 import pl.model.recipedetails.WinePairing
+import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 import pl.uimodel.recipedetails.RecipeDetailsUiModel
 import pl.uimodel.recipedetails.WinePairingUiModel
 
@@ -13,7 +15,8 @@ fun RecipeDetails.toUiModel() = RecipeDetailsUiModel(
     summary = summary,
     winePairing = winePairing.toUiModel(),
     dishTypes = dishTypes,
-    dietTypes = createDietTypesList(vegan, vegetarian, glutenFree, cheap, dairyFree)
+    dietTypes = createDietTypesList(vegan, vegetarian, glutenFree, cheap, dairyFree),
+    ingredients = ingredients.map { it.toUiModel() }
 )
 
 fun WinePairing.toUiModel() = WinePairingUiModel(
@@ -41,3 +44,11 @@ fun createDietTypesList(
             .forEach { add(dietTypes[it].first) }
     }
 }
+
+fun ExtendedIngredient.toUiModel() = ExtendedIngredientUiModel(
+    id = id,
+    image = image,
+    name = name,
+    unit = unit,
+    amount = amount
+)

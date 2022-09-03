@@ -12,5 +12,6 @@ data class RecipeDetailsResponse(
     val vegetarian: Boolean,
     val dishTypes: List<String>,
     val summary: String,
-    val winePairing: WinePairingResponse
+    val winePairing: WinePairingResponse,
+    val extendedIngredients: List<ExtendedIngredientResponse>
 )

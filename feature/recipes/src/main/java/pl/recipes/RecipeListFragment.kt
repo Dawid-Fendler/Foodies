@@ -19,7 +19,7 @@ class RecipeListFragment :
 
     private val viewModel: RecipeListViewModel by viewModels()
 
-    private val mAdapter by lazy { RecipesAdapter() }
+    private val recipesAdapter by lazy { RecipesAdapter() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class RecipeListFragment :
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.adapter = mAdapter
+        binding.recyclerView.adapter = recipesAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
@@ -58,7 +58,7 @@ class RecipeListFragment :
             .observe(viewLifecycleOwner) { state ->
                 when (state) {
                     is RecipeListViewState.RecipesListLoaded ->
-                        mAdapter.setData(state.result)
+                        recipesAdapter.setData(state.result)
                     is RecipeListViewState.RecipesEmpty -> {
                         binding.recyclerView.isVisible = false
                         binding.errorView.isVisible = true
@@ -76,7 +76,7 @@ class RecipeListFragment :
     }
 
     private fun navigateToRecipeDetails() {
-        compositeDisposable += mAdapter.getImageClickSubject()
+        compositeDisposable += recipesAdapter.getImageClickSubject()
             .throttleFirst(500L, TimeUnit.MILLISECONDS)
             .subscribe {
                 findNavController().navigate(

@@ -14,6 +14,7 @@
             android:id="@+id/action_recipeListFragment_to_recipeDetailsFragment"
             app:destination="@id/recipeDetailsFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/recipeDetailsFragment"
         android:name="pl.recipedetails.RecipeDetailsFragment"
@@ -25,7 +26,11 @@
         <action
             android:id="@+id/action_recipeDetailsFragment_to_winesFragmentDialog"
             app:destination="@id/winesFragmentDialog" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_ingredientsListFragment"
+            app:destination="@id/ingredientsListFragment" />
     </fragment>
+
     <dialog
         android:id="@+id/winesFragmentDialog"
         android:name="pl.recipedetails.WinesFragmentDialog"
@@ -35,4 +40,13 @@
             android:name="wines"
             app:argType="pl.uimodel.recipedetails.WinePairingUiModel" />
     </dialog>
+
+    <fragment
+        android:id="@+id/ingredientsListFragment"
+        android:name="pl.ingredients.IngredientsListFragment"
+        android:label="IngredientsListFragment" >
+        <argument
+            android:name="ingredients"
+            app:argType="pl.uimodel.recipedetails.ExtendedIngredientUiModel[]" />
+    </fragment>
 </navigation>
