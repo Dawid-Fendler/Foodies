@@ -4,13 +4,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.rxjava3.subjects.PublishSubject
+import pl.ingredientdetails.IngredientDetailsNavigationModel
 import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsViewHolder>() {
 
     private var ingredients = emptyList<ExtendedIngredientUiModel>()
 
-    private val imageClickSubject: PublishSubject<Int> = PublishSubject.create()
+    private val imageClickSubject: PublishSubject<IngredientDetailsNavigationModel> = PublishSubject.create()
     fun getImageClickSubject() = imageClickSubject
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientsViewHolder {

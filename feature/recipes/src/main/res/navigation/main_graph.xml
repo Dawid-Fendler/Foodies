@@ -44,9 +44,21 @@
     <fragment
         android:id="@+id/ingredientsListFragment"
         android:name="pl.ingredients.IngredientsListFragment"
-        android:label="IngredientsListFragment" >
+        android:label="IngredientsListFragment"
+        tools:layout="@layout/ingredients_list_fragment">
         <argument
             android:name="ingredients"
             app:argType="pl.uimodel.recipedetails.ExtendedIngredientUiModel[]" />
+        <action
+            android:id="@+id/action_ingredientsListFragment_to_ingredientDetailsFragment"
+            app:destination="@id/ingredientDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientDetailsFragment"
+        android:name="pl.ingredientdetails.IngredientDetailsFragment"
+        android:label="IngredientDetailsFragment" >
+        <argument
+            android:name="ingredientDetailsNavigationModel"
+            app:argType="pl.ingredientdetails.IngredientDetailsNavigationModel" />
     </fragment>
 </navigation>

@@ -9,5 +9,11 @@
     <string name="wines">Wines</string>
     <string name="ingredients_amount">100</string>
     <string name="ingredients_name">Name</string>
-    <string name="ingredients_unit">Grams</string>
+    <string name="ingredients_unit">Units\n%s</string>
+    <string name="amount_title">Amount:%d</string>
+    <string name="consistency_title">Consistency:%s</string>
+    <string name="estimate_title">Estimate Cost:\n%s</string>
+    <string name="substitutes_title">Substitutes:\n%s</string>
+    <string name="categories_title">Categories:\n%s</string>
+    <string name="ingredient_details_data_loading_error">Could not loading ingredient details</string>
 </resources>

@@ -4,8 +4,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import pl.api.IngredientsDetailsApi
 import pl.api.RecipeDetailsApi
 import pl.api.RecipesApi
+import pl.datasource.ingredientdetails.IngredientDetailsDataSource
+import pl.datasource.ingredientdetails.IngredientDetailsRemoteDataSource
 import pl.datasource.recipedetails.RecipeDetailsDataSource
 import pl.datasource.recipedetails.RecipeDetailsRemoteDataSource
 import pl.datasource.recipes.RecipeDataSource
@@ -36,4 +39,14 @@ object DataSourceModule {
     @Provides
     fun provideRecipeDetailsDataSource(recipeDetailsApi: RecipeDetailsApi): RecipeDetailsDataSource =
         RecipeDetailsRemoteDataSource(recipeDetailsApi)
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class IngredientDetailsRemoteDataSource
+
+    @Singleton
+    @IngredientDetailsRemoteDataSource
+    @Provides
+    fun provideIngredientDetailsDataSource(ingredientsDetailsApi: IngredientsDetailsApi): IngredientDetailsDataSource =
+        IngredientDetailsRemoteDataSource(ingredientsDetailsApi)
 }

@@ -71,7 +71,7 @@ class RecipeDetailsFragment :
     }
 
     private fun initRecipeImage(imageUrl: String) {
-        binding.mainImageView.load(imageUrl) {
+        binding.recipeImage.load(imageUrl) {
             crossfade(600)
             error(pl.design.R.drawable.ic_error_placeholder)
         }

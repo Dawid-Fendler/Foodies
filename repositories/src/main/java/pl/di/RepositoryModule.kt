@@ -4,10 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import pl.repositories.RecipeDetailsRepository
-import pl.repositories.RecipeDetailsRepositoryImpl
-import pl.repositories.RecipeRepository
-import pl.repositories.RecipeRepositoryImpl
+import pl.repositories.*
 import javax.inject.Singleton
 
 @Module
@@ -21,4 +18,8 @@ interface RepositoryModule {
     @Binds
     @Singleton
     fun bindsRecipeDetailsRepository(impl: RecipeDetailsRepositoryImpl): RecipeDetailsRepository
+
+    @Binds
+    @Singleton
+    fun bindsIngredientDetailsRepository(impl: IngredientDetailsRepositoryImpl): IngredientDetailsRepository
 }

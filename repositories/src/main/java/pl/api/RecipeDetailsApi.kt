@@ -8,7 +8,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RecipeDetailsApi {
-
     @GET("/recipes/{id}/information")
     fun getRecipeDetails(
         @Path("id") id: Int,

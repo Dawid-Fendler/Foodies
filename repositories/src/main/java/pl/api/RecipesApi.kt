@@ -7,7 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RecipesApi {
-
     @GET("/recipes/complexSearch")
     fun getRecipes(
         @Query("number") recipeLimit: Int = 20,
