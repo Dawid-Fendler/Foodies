@@ -18,6 +18,9 @@ class RecipeDetailsRemoteDataSourceTest {
     fun `get recipe details and map to domain model`() {
         whenever(api.getRecipeDetails(1)).thenReturn(Observable.just(recipeDetailsResponse))
 
-        dataSource.getRecipeDetails(1).test().assertResult(recipeDetails)
+        dataSource
+            .getRecipeDetails(1)
+            .test()
+            .assertResult(recipeDetails)
     }
 }
