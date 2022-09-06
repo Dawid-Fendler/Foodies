@@ -8,7 +8,6 @@ class RecipeRepositoryImpl @Inject constructor(
     @DataSourceModule.RecipeRemoteDataSource
     private val recipeDataSource: RecipeDataSource
 ) : RecipeRepository {
-
     override fun getRecipes() =
         recipeDataSource
             .getRecipes()

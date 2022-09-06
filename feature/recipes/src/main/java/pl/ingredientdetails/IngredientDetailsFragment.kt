@@ -10,8 +10,11 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import pl.Constants
 import pl.architecture.base.BaseFragment
+import pl.extensions.createFormattedText
 import pl.recipes.R
 import pl.recipes.databinding.IngredientDetailsFragmentBinding
+import pl.uimodel.ingredientdetails.EstimatedCostUiModel
+import pl.uimodel.ingredientdetails.IngredientFullDetailsUiModel
 
 @AndroidEntryPoint
 class IngredientDetailsFragment :
@@ -105,9 +108,11 @@ class IngredientDetailsFragment :
             binding.unitsText.isVisible = false
             return
         }
-        val unitsText = createText(units)
         binding.unitsText.text =
-            requireContext().resources.getString(R.string.ingredients_unit, unitsText)
+            requireContext().resources.getString(
+                R.string.ingredients_unit,
+                units.createFormattedText()
+            )
     }
 
     private fun initIngredientCategory(categories: List<String>?) {
@@ -115,9 +120,11 @@ class IngredientDetailsFragment :
             binding.categoryText.isVisible = false
             return
         }
-        val categoriesText = createText(categories)
         binding.categoryText.text =
-            requireContext().resources.getString(R.string.categories_title, categoriesText)
+            requireContext().resources.getString(
+                R.string.categories_title,
+                categories.createFormattedText()
+            )
     }
 
     private fun initIngredientEstimatedCost(estimatedCost: EstimatedCostUiModel?) {
@@ -137,20 +144,10 @@ class IngredientDetailsFragment :
             binding.substitutesText.isVisible = false
             return
         }
-        val substitutesText = createText(substitutes)
         binding.substitutesText.text =
-            requireContext().resources.getString(R.string.substitutes_title, substitutesText)
-    }
-
-    private fun createText(elements: List<String>): String {
-        var text = ""
-        elements.forEach { element ->
-            if (element == elements.last()) {
-                text = "- $element"
-                return@forEach
-            }
-            text = "-$element\n"
-        }
-        return text
+            requireContext().resources.getString(
+                R.string.substitutes_title,
+                substitutes.createFormattedText()
+            )
     }
 }

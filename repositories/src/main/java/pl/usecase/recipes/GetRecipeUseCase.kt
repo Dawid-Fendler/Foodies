@@ -17,7 +17,7 @@ class GetRecipeUseCase @Inject constructor(
             .map { recipe ->
                 if (recipe.recipeList.isEmpty()) {
                     Result.EmptyList("Couldn't find any recipes")
-                }else {
+                } else {
                     Result.Success(recipe) as Result
                 }
             }
@@ -28,7 +28,7 @@ class GetRecipeUseCase @Inject constructor(
 
     sealed class Result {
         data class Success(val data: Recipe) : Result()
-        data class EmptyList(val errorMessage: String): Result()
+        data class EmptyList(val errorMessage: String) : Result()
         data class Failure(val throwable: Throwable) : Result()
     }
 }

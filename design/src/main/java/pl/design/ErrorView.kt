@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isVisible
 import pl.design.databinding.ErrorViewBinding
 
 class ErrorView @JvmOverloads constructor(
@@ -18,10 +17,6 @@ class ErrorView @JvmOverloads constructor(
         this,
         true
     )
-
-    fun setErrorTextColor(color: Int) {
-        binding.errorTextView.setTextColor(color)
-    }
 
     fun setErrorText(text: String) {
         binding.errorTextView.text = text

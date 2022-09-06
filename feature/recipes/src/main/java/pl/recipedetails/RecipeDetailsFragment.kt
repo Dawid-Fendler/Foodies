@@ -110,6 +110,9 @@ class RecipeDetailsFragment :
     }
 
     private fun initSummary(description: String) {
+        if (description.isEmpty()) {
+            binding.summaryTextView.isVisible = false
+        }
         binding.summaryTextView.parseHtml(description)
     }
 

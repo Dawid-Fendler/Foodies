@@ -1,4 +1,4 @@
-package pl.mapper
+package pl.mapper.recipes
 
 import pl.model.recipes.Recipe
 import pl.model.recipes.RecipeResult

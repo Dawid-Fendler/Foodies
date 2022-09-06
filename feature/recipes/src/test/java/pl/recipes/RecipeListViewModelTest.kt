@@ -11,9 +11,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import pl.usecase.recipes.GetRecipeUseCase
-import pl.usecase.recipes.GetRecipeUseCase.Result.Success
-import pl.usecase.recipes.GetRecipeUseCase.Result.EmptyList
-import pl.usecase.recipes.GetRecipeUseCase.Result.Failure
+import pl.usecase.recipes.GetRecipeUseCase.Result.*
 
 
 class RecipeListViewModelTest {
@@ -26,14 +24,14 @@ class RecipeListViewModelTest {
 
     @Before
     fun setup() {
-        RxAndroidPlugins.setInitMainThreadSchedulerHandler{ Schedulers.trampoline() }
-        RxJavaPlugins.setIoSchedulerHandler{ Schedulers.trampoline() }
+        RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
+        RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
 
         viewModelTest = RecipeListViewModel(useCase)
     }
 
     @Test
-    fun `show empty state screen, when get recipes returns EmptyList`(){
+    fun `show empty state screen, when get recipes returns EmptyList`() {
         val recipesLiveDataObserver = mock<Observer<RecipeListViewState>>()
         viewModelTest.getRecipesListViewState().observeForever(recipesLiveDataObserver)
         whenever(useCase.run()).thenReturn(Observable.just(EmptyList("Message")))
@@ -44,7 +42,7 @@ class RecipeListViewModelTest {
     }
 
     @Test
-    fun `show error snackbar, when get recipes returns Failure`(){
+    fun `show error snackbar, when get recipes returns Failure`() {
         val throwable = Throwable()
         val recipesLiveDataObserver = mock<Observer<RecipeListViewState>>()
         viewModelTest.getRecipesListViewState().observeForever(recipesLiveDataObserver)
@@ -52,11 +50,15 @@ class RecipeListViewModelTest {
 
         viewModelTest.init()
 
-        verify(recipesLiveDataObserver).onChanged(RecipeListViewState.RecipeListLoadFailure(throwable))
+        verify(recipesLiveDataObserver).onChanged(
+            RecipeListViewState.RecipeListLoadFailure(
+                throwable
+            )
+        )
     }
 
     @Test
-    fun `load recipes and map to uiModel , when get recipes returns Success`(){
+    fun `load recipes and map to uiModel , when get recipes returns Success`() {
         val recipesLiveDataObserver = mock<Observer<RecipeListViewState>>()
         viewModelTest.getRecipesListViewState().observeForever(recipesLiveDataObserver)
         whenever(useCase.run()).thenReturn(Observable.just(Success(recipe)))

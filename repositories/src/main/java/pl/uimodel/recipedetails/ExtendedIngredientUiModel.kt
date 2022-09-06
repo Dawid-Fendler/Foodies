@@ -10,4 +10,4 @@ data class ExtendedIngredientUiModel(
     val name: String,
     val unit: String,
     val amount: Double,
-): Parcelable
+) : Parcelable

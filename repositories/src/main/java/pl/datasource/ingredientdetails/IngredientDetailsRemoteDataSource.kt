@@ -17,5 +17,4 @@ class IngredientDetailsRemoteDataSource @Inject constructor(
     override fun getIngredientSubstitutes(name: String): Observable<IngredientSubstitutes> {
         return api.getIngredientSubstitutes(name).map { it.toDomain() }
     }
-
 }

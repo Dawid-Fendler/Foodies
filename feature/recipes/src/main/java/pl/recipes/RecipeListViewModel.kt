@@ -2,6 +2,7 @@ package pl.recipes
 
 import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.kotlin.plusAssign
 import pl.architecture.SingleLiveEvent
 import pl.architecture.base.BaseViewModel
 import pl.usecase.recipes.GetRecipeUseCase
@@ -24,7 +25,7 @@ class RecipeListViewModel @Inject constructor(
     }
 
     private fun getRecipes() {
-        getRecipeUseCase
+        compositeDisposable += getRecipeUseCase
             .run()
             .doOnSubscribe { progressLoadingEvent.postValue(true) }
             .doOnTerminate { progressLoadingEvent.postValue(false) }

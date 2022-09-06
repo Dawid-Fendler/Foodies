@@ -3,6 +3,8 @@ package pl.ingredientdetails
 import pl.model.ingredientdetails.EstimatedCost
 import pl.model.ingredientdetails.IngredientDetails
 import pl.model.ingredientdetails.IngredientSubstitutes
+import pl.uimodel.ingredientdetails.EstimatedCostUiModel
+import pl.uimodel.ingredientdetails.IngredientFullDetailsUiModel
 
 fun mapToUiModel(
     ingredientDetails: IngredientDetails,

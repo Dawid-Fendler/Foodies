@@ -17,9 +17,4 @@ class GetIngredientSubstitutesUseCase @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
     }
-
-    sealed class Result {
-        data class Success(val data: IngredientSubstitutes) : Result()
-        data class Failure(val throwable: Throwable) : Result()
-    }
 }

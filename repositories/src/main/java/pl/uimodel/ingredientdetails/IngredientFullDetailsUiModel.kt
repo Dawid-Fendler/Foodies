@@ -1,4 +1,4 @@
-package pl.ingredientdetails
+package pl.uimodel.ingredientdetails
 
 data class IngredientFullDetailsUiModel(
     val name: String?,
