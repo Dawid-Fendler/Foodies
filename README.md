@@ -20,6 +20,6 @@ wraz z ich szczegółowym opisem. Została napisana w koncepcji single activity 
 ## Funkcjonalność
 - Ekran wyświetlający listę przepisów
 - Ekran wyświetlający szczegóły przepisu
-- Dialog wyświetlający polecena wina do posiłków
+- Dialog wyświetlający polecane wina do przepisu
 - Ekran wyświetlający list skladników przepisu
 - Ekran wyświetlający szczegóły składniku
