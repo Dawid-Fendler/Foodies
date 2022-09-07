@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import io.reactivex.rxjava3.subjects.PublishSubject
-import pl.recipes.databinding.RecipeListRowViewBinding
+import pl.recipes.databinding.ViewRecipeListRowBinding
 import pl.uimodel.recipes.RecipeResultUiModel
 
 class RecipesViewHolder(
-    private val binding: RecipeListRowViewBinding
+    private val binding: ViewRecipeListRowBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(result: RecipeResultUiModel, imageClickSubject: PublishSubject<Int>) {
@@ -38,7 +38,7 @@ class RecipesViewHolder(
     companion object {
         fun from(parent: ViewGroup): RecipesViewHolder =
             RecipesViewHolder(
-                RecipeListRowViewBinding.inflate(
+                ViewRecipeListRowBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false

@@ -10,12 +10,12 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.kotlin.plusAssign
 import pl.architecture.base.BaseFragment
-import pl.recipes.databinding.RecipeListFragmentBinding
+import pl.recipes.databinding.FragmentRecipeListBinding
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class RecipeListFragment :
-    BaseFragment<RecipeListFragmentBinding>(RecipeListFragmentBinding::inflate) {
+    BaseFragment<FragmentRecipeListBinding>(FragmentRecipeListBinding::inflate) {
 
     private val viewModel: RecipeListViewModel by viewModels()
 

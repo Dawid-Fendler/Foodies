@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import pl.recipes.databinding.WineViewBinding
+import pl.recipes.databinding.ViewWinesBinding
 
 class WineView @JvmOverloads constructor(
     context: Context,
@@ -12,7 +12,7 @@ class WineView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : ConstraintLayout(context, attrs, defStyle) {
 
-    private val binding = WineViewBinding.inflate(
+    private val binding = ViewWinesBinding.inflate(
         LayoutInflater.from(context),
         this,
         true

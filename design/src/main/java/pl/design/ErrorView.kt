@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import pl.design.databinding.ErrorViewBinding
+import pl.design.databinding.ViewErrorBinding
 
 class ErrorView @JvmOverloads constructor(
     context: Context,
@@ -12,7 +12,7 @@ class ErrorView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : ConstraintLayout(context, attrs, defStyle) {
 
-    private val binding = ErrorViewBinding.inflate(
+    private val binding = ViewErrorBinding.inflate(
         LayoutInflater.from(context),
         this,
         true

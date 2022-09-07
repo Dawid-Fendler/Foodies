@@ -12,13 +12,13 @@ import pl.Constants
 import pl.architecture.base.BaseFragment
 import pl.extensions.createFormattedText
 import pl.recipes.R
-import pl.recipes.databinding.IngredientDetailsFragmentBinding
+import pl.recipes.databinding.FragmentIngredientDetailsBinding
 import pl.uimodel.ingredientdetails.EstimatedCostUiModel
 import pl.uimodel.ingredientdetails.IngredientFullDetailsUiModel
 
 @AndroidEntryPoint
 class IngredientDetailsFragment :
-    BaseFragment<IngredientDetailsFragmentBinding>(IngredientDetailsFragmentBinding::inflate) {
+    BaseFragment<FragmentIngredientDetailsBinding>(FragmentIngredientDetailsBinding::inflate) {
 
     private val viewModel: IngredientDetailsViewModel by viewModels()
     private val arguments: IngredientDetailsFragmentArgs by navArgs()

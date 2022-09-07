@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import pl.recipes.databinding.DishesDietTypeViewBinding
+import pl.recipes.databinding.ViewDishesDietTypeBinding
 
 class DishesDietTypeView @JvmOverloads constructor(
     context: Context,
@@ -13,7 +13,7 @@ class DishesDietTypeView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyle) {
 
 
-    private val binding = DishesDietTypeViewBinding.inflate(
+    private val binding = ViewDishesDietTypeBinding.inflate(
         LayoutInflater.from(context),
         this,
         true

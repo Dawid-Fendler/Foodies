@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.navArgs
 import pl.architecture.base.BaseDialogFragment
-import pl.recipes.databinding.WinesFragmentDialogBinding
+import pl.recipes.databinding.DialogFragmentWinesBinding
 
 class WinesFragmentDialog :
-    BaseDialogFragment<WinesFragmentDialogBinding>(WinesFragmentDialogBinding::inflate) {
+    BaseDialogFragment<DialogFragmentWinesBinding>(DialogFragmentWinesBinding::inflate) {
 
     private val arguments: WinesFragmentDialogArgs by navArgs()
 

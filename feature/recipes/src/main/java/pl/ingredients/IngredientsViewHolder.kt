@@ -7,11 +7,11 @@ import coil.load
 import io.reactivex.rxjava3.subjects.PublishSubject
 import pl.Constants.BASE_IMAGE_URL
 import pl.ingredientdetails.IngredientDetailsNavigationModel
-import pl.recipes.databinding.IngredientsListRowViewBinding
+import pl.recipes.databinding.ViewIngredientsListRowBinding
 import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 
 class IngredientsViewHolder(
-    private val binding: IngredientsListRowViewBinding
+    private val binding: ViewIngredientsListRowBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
@@ -46,7 +46,7 @@ class IngredientsViewHolder(
     companion object {
         fun from(parent: ViewGroup): IngredientsViewHolder =
             IngredientsViewHolder(
-                IngredientsListRowViewBinding.inflate(
+                ViewIngredientsListRowBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false

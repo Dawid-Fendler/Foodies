@@ -13,14 +13,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
 import pl.extensions.parseHtml
 import pl.recipes.R
-import pl.recipes.databinding.RecipeDetailsFragmentBinding
+import pl.recipes.databinding.FragmentRecipeDetailsBinding
 import pl.uimodel.recipedetails.ExtendedIngredientUiModel
 import pl.uimodel.recipedetails.RecipeDetailsUiModel
 import pl.uimodel.recipedetails.WinePairingUiModel
 
 @AndroidEntryPoint
 class RecipeDetailsFragment :
-    BaseFragment<RecipeDetailsFragmentBinding>(RecipeDetailsFragmentBinding::inflate) {
+    BaseFragment<FragmentRecipeDetailsBinding>(FragmentRecipeDetailsBinding::inflate) {
 
     private val viewModel: RecipeDetailsViewModel by viewModels()
     private val arguments: RecipeDetailsFragmentArgs by navArgs()
@@ -71,6 +71,9 @@ class RecipeDetailsFragment :
     }
 
     private fun initRecipeImage(imageUrl: String) {
+        if (imageUrl.isEmpty()) {
+            binding.recipeImage.isVisible = false
+        }
         binding.recipeImage.load(imageUrl) {
             crossfade(600)
             error(pl.design.R.drawable.ic_error_placeholder)
